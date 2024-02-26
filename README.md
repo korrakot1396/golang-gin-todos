@@ -1,5 +1,5 @@
 # golang-gin-todos_api
-![](https://github.com/korrakot1396/Samsantech_Contact_App/blob/main/src/images/logo/logo_mini.png.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/gin_gonic_logo.png)
 # organizer
 
 | nickname | full-name           | github username |
@@ -38,3 +38,5 @@ go test
 
 
 ## Demo Server Run in Postman And Unit Test
+
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/unit_testing.png)
