@@ -51,3 +51,7 @@ export Todo-App-Api.postman_collection.json into your-postman-application
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/get_all_tasks.png)
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/add_todo.png)
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/duplicate.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/update_task.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/mark_done.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/delete_by_id.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/delete_all.png)
