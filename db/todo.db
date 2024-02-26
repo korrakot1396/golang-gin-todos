@@ -1,0 +1,8 @@
+CREATE TABLE todos (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL CHECK(length(title) <= 100),
+    date TEXT NOT NULL CHECK(datetime(date) IS NOT NULL),
+    status TEXT NOT NULL CHECK(status IN ('IN_PROGRESS', 'COMPLETE')),
+    description TEXT, 
+    image TEXT
+);
