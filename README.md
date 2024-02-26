@@ -25,6 +25,14 @@ cd ./tests
 go test
 ```
 
+_For postman_
+
+```shell
+open postman application
+cd postman
+export Todo-App-Api.postman_collection.json into your-postman-application
+```
+
 
 ## Functionality
 
