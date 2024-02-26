@@ -1,4 +1,4 @@
-# Samsantech_Contact_App
+# golang-gin-todos_api
 ![](https://github.com/korrakot1396/Samsantech_Contact_App/blob/main/src/images/logo/logo_mini.png.png)
 # organizer
 
