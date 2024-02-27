@@ -34,6 +34,16 @@ func NewTaskHandler(service TaskServiceInterface) *TaskHandler {
 	return &TaskHandler{Service: service}
 }
 
+// CreateTask handles the creation of a new task.
+// @Summary Create a new task
+// @Description Create a new task in the system
+// @Accept json
+// @Produce json
+// @Param task body models.Task true "Task object to be created"
+// @Success 201 {object} models.Task "Created task"
+// @Failure 400 {object} gin.H "Bad request"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks [post]
 func (h *TaskHandler) CreateTask(c *gin.Context) {
 	var task models.Task
 	if err := c.BindJSON(&task); err != nil {
@@ -98,6 +108,14 @@ func extractBase64FromFile(file *multipart.FileHeader) (string, error) {
 	return encoded, nil
 }
 
+// ListTasks handles the retrieval of all tasks.
+// @Summary List all tasks
+// @Description Retrieve a list of all tasks in the system
+// @Accept json
+// @Produce json
+// @Success 200 {array} models.Task "List of tasks"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks [get]
 func (h *TaskHandler) ListTasks(c *gin.Context) {
 	tasks, err := h.Service.GetAllTasks(c.Request.Context())
 	if err != nil {
@@ -108,6 +126,17 @@ func (h *TaskHandler) ListTasks(c *gin.Context) {
 	c.JSON(http.StatusOK, tasks)
 }
 
+// GetTaskByID handles the retrieval of a task by its ID.
+// @Summary Get a task by ID
+// @Description Retrieve a task by its unique ID
+// @Accept json
+// @Produce json
+// @Param id path string true "Task ID"
+// @Success 200 {object} models.Task "Requested task"
+// @Failure 400 {object} gin.H "Bad request"
+// @Failure 404 {object} gin.H "Task not found"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks/{id} [get]
 func (h *TaskHandler) GetTaskByID(c *gin.Context) {
 	taskID := c.Query("id")
 
@@ -126,6 +155,18 @@ func (h *TaskHandler) GetTaskByID(c *gin.Context) {
 	c.JSON(http.StatusOK, task)
 }
 
+// UpdateTask handles the updating of a task.
+// @Summary Update a task
+// @Description Update an existing task in the system
+// @Accept json
+// @Produce json
+// @Param id path string true "Task ID"
+// @Param task body models.Task true "Updated task object"
+// @Success 200 {object} gin.H "Task updated successfully"
+// @Failure 400 {object} gin.H "Bad request"
+// @Failure 404 {object} gin.H "Task not found"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks/{id} [put]
 func (h *TaskHandler) UpdateTask(c *gin.Context) {
 
 	taskID := c.Param("id")
@@ -152,6 +193,17 @@ func (h *TaskHandler) UpdateTask(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Task updated successfully"})
 }
 
+// DeleteTask handles the deletion of a task.
+// @Summary Delete a task
+// @Description Delete an existing task from the system
+// @Accept json
+// @Produce json
+// @Param id path string true "Task ID"
+// @Success 200 {object} gin.H "Task deleted successfully"
+// @Failure 400 {object} gin.H "Bad request"
+// @Failure 404 {object} gin.H "Task not found"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks/{id} [delete]
 func (h *TaskHandler) DeleteTask(c *gin.Context) {
 
 	taskID := c.Param("id")
@@ -166,6 +218,14 @@ func (h *TaskHandler) DeleteTask(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Task deleted successfully"})
 }
 
+// DeleteAllTasks handles the deletion of all tasks.
+// @Summary Delete all tasks
+// @Description Delete all existing tasks from the system
+// @Accept json
+// @Produce json
+// @Success 200 {object} gin.H "All tasks deleted successfully"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks [delete]
 func (h *TaskHandler) DeleteAllTasks(c *gin.Context) {
 	err := h.Service.DeleteAllTasksQuery(c.Request.Context())
 	if err != nil {
@@ -176,6 +236,17 @@ func (h *TaskHandler) DeleteAllTasks(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "All tasks deleted successfully"})
 }
 
+// MarkTaskAsDone handles marking a task as done.
+// @Summary Mark a task as done
+// @Description Mark an existing task as done
+// @Accept json
+// @Produce json
+// @Param id path string true "Task ID"
+// @Success 200 {object} gin.H "Task marked as done successfully"
+// @Failure 400 {object} gin.H "Bad request"
+// @Failure 404 {object} gin.H "Task not found"
+// @Failure 500 {object} gin.H "Internal server error"
+// @Router /tasks/done/{id} [put]
 func (h *TaskHandler) MarkTaskAsDone(c *gin.Context) {
 	taskID := c.Param("id")
 	log.Println("Logging TaskID: ", taskID)
