@@ -58,7 +58,10 @@ open brower go to "http://localhost:8081/docs/index.html"
 4. Use UUID supported for Field 'ID'
 5. Use Gingonic Framework in Golang
 6. Create Unit Testing in Golang
-7. Validation Duplicate Field 'Title'
+7. Validation Duplicate Field 'title'
+8. Upload Image and Convert to Base64 format
+9. Orders by title, status and date
+10. Developed API Exploer with Swagger
 
 
 
