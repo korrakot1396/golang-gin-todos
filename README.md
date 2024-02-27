@@ -52,16 +52,16 @@ open brower go to "http://localhost:8081/docs/index.html"
 
 ## Functionality
 
-1. CRUD todos for view, create, update, delete
-2. Feature for create todos
-3. Validation 100 Character for Field 'Title'
-4. Use UUID supported for Field 'ID'
-5. Use Gingonic Framework in Golang
-6. Create Unit Testing in Golang
-7. Validation Duplicate Field 'title'
-8. Upload Image and Convert to Base64 format
-9. Orders by title, status and date
-10. Developed API Exploer with Swagger
+1. Comprehensive Todo Management: Implement full CRUD functionality to facilitate the viewing, creation, updating, and deletion of todos.
+2. Streamlined Todo Creation: Develop a user-friendly feature for seamlessly creating new todos.
+3. Title Field Validation: Implement validation to restrict the title field to a maximum of 100 characters, ensuring data integrity and user experience.
+4. Utilize UUID for ID Generation: Utilize universally unique identifiers (UUID) to generate IDs for todos, ensuring uniqueness and reliability.
+5. Integration with Gingonic Framework: Harness the power of the Gingonic framework in Golang for robust backend development, ensuring scalability and performance.
+6. Unit Testing for Code Quality: Implement comprehensive unit tests in Golang to verify the functionality and quality of the codebase.
+7. Prevent Duplicate Titles: Incorporate validation to prevent the creation of todos with duplicate titles, enhancing data consistency and usability.
+8. Efficient Image Upload and Conversion: Enable users to upload images for their todos and seamlessly convert them to base64 format, enhancing data handling efficiency.
+9. Flexible Sorting Options: Provide users with the flexibility to sort todos based on title, status, and date, enhancing usability and navigation.
+10. API Exploration with Swagger: Develop an API explorer using Swagger to facilitate seamless exploration and interaction with the API endpoints, enhancing developer experience and productivity.
 
 
 
