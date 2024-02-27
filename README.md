@@ -42,6 +42,7 @@ export Todo-App-Api.postman_collection.json into your-postman-application
 4. Use UUID supported for Field 'ID'
 5. Use Gingonic Framework in Golang
 6. Create Unit Testing in Golang
+7. Validation Duplicate Field 'Title'
 
 
 
