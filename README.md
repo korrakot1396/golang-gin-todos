@@ -32,7 +32,23 @@ open postman application
 cd postman
 export Todo-App-Api.postman_collection.json into your-postman-application
 ```
+## Swagger Documentation
 
+_For swagger_
+
+```shell
+cd golang-gin-todos
+go run cmd/main.go
+open brower go to "http://localhost:8081/docs/index.html"
+```
+
+## Swagger
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/swagger_1.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/swagger_2.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/swagger_3.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/swagger_4.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/swagger_5.png)
+![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/swagger_6.png)
 
 ## Functionality
 
