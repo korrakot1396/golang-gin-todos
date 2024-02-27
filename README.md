@@ -65,12 +65,19 @@ open brower go to "http://localhost:8081/docs/index.html"
 ## Demo Server Run in Postman And Unit Test
 
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/unit_testing.png)
+### Get all task
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/get_all_tasks.png)
+### Add new task
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/add_todo.png)
+### Case Title duplicated
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/duplicate.png)
+### Update task
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/update_task.png)
+### Mark done from 'IN_PROGRESS' to 'SUCCESS'
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/mark_done.png)
+### Delete by Id
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/delete_by_id.png)
+### Delete all tasks
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/delete_all.png)
 ### Save Base64 into Field 'image'
 ![](https://github.com/korrakot1396/golang-gin-todos/blob/main/img/pv_1.png)
