@@ -1,0 +1,138 @@
+swagger: "2.0"
+info:
+  description: "A Task service API in Go using Gin framework"
+  version: "1.0"
+  title: "TaskTodos Service API"
+  contact: {}
+
+host: "localhost:8081"
+
+paths:
+  /tasks:
+    get:
+      summary: Retrieve all tasks
+      description: Retrieves a list of all tasks in the system
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Task'
+        500:
+          description: Internal server error
+
+    post:
+      summary: Create a new task
+      description: Create a new task in the system
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: task
+          description: Task object to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Task'
+      responses:
+        201:
+          description: Task created successfully
+          schema:
+            $ref: '#/definitions/Task'
+        400:
+          description: Bad request
+        500:
+          description: Internal server error
+
+  /tasks/{id}:
+    get:
+      summary: Retrieve a task by ID
+      description: Retrieves a task by its unique ID
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: Task ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/Task'
+        400:
+          description: Bad request
+        404:
+          description: Task not found
+        500:
+          description: Internal server error
+
+    put:
+      summary: Update a task
+      description: Update an existing task in the system
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: Task ID
+          required: true
+          type: string
+        - in: body
+          name: task
+          description: Updated task object
+          required: true
+          schema:
+            $ref: '#/definitions/Task'
+      responses:
+        200:
+          description: Task updated successfully
+          schema:
+            $ref: '#/definitions/Task'
+        400:
+          description: Bad request
+        404:
+          description: Task not found
+        500:
+          description: Internal server error
+
+    delete:
+      summary: Delete a task
+      description: Delete an existing task from the system
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: Task ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: Task deleted successfully
+        400:
+          description: Bad request
+        404:
+          description: Task not found
+        500:
+          description: Internal server error
+
+definitions:
+  Task:
+    type: object
+    properties:
+      ID:
+        type: string
+      Title:
+        type: string
+      Description:
+        type: string
+      Status:
+        type: string
