@@ -228,7 +228,7 @@ const docTemplate = `{
                     "type": "string",
                     "description": "Description of the task"
                 },
-                "imgBase64": {
+                "image": {
                     "type": "string",
                     "description": "Base64 encoded image of the task, if available"
                 }

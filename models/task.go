@@ -10,7 +10,7 @@ type Task struct {
 	Date        string    `json:"date" swagger:"description=Date of the task"`
 	Status      string    `json:"status" swagger:"description=Status of the task"`
 	Description string    `json:"description" swagger:"description=Description of the task"`
-	Image       string    `json:"imgBase64,omitempty" swagger:"description=Base64 encoded image of the task, if available"`
+	Image       string    `json:"image,omitempty" swagger:"description=Base64 encoded image of the task, if available"`
 }
 
 func NewTask(title, date, status, description, image string) *Task {

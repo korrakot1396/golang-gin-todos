@@ -56,22 +56,22 @@ func (h *TaskHandler) CreateTask(c *gin.Context) {
 		return
 	}
 
-	if task.Image != "" {
-		file, err := c.FormFile("image")
-		if err != nil {
-			if err != http.ErrMissingFile {
-				c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to process image file"})
-				return
-			}
-		} else {
-			imageBase64, err := extractBase64FromFile(file)
-			if err != nil {
-				c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid image file format"})
-				return
-			}
-			task.Image = imageBase64
-		}
-	}
+	// if task.Image != "" {
+	// 	file, err := c.FormFile("image")
+	// 	if err != nil {
+	// 		if err != http.ErrMissingFile {
+	// 			c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to process image file"})
+	// 			return
+	// 		}
+	// 	} else {
+	// 		imageBase64, err := extractBase64FromFile(file)
+	// 		if err != nil {
+	// 			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid image file format"})
+	// 			return
+	// 		}
+	// 		task.Image = imageBase64
+	// 	}
+	// }
 
 	createdTask, err := h.Service.CreateTaskQuery(c.Request.Context(), &task)
 	if err != nil {

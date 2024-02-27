@@ -167,7 +167,7 @@ func (s *TaskService) DeleteAllTasksQuery(ctx context.Context) error {
 }
 
 func (s *TaskService) MarkTaskAsDoneQuery(ctx context.Context, id string) (*models.Task, error) {
-	
+
 	existingTask, err := s.GetTaskByID(ctx, id)
 	if err != nil {
 		return nil, err
@@ -182,4 +182,3 @@ func (s *TaskService) MarkTaskAsDoneQuery(ctx context.Context, id string) (*mode
 
 	return existingTask, nil
 }
-
